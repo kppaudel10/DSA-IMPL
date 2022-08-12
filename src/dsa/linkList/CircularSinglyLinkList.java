@@ -77,7 +77,7 @@ public class CircularSinglyLinkList implements LinkListOperations<Integer>{
             // last node tempNode to middle
             tempNode.nextNode = middleNode;
         }
-    }
+     }
 
     @Override
     public void addAll(Collection<Integer> integers) {
