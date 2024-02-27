@@ -210,10 +210,10 @@ public class CircularSinglyLinkList implements LinkListOperations<Integer>{
 
     @Override
     public void remove(Integer index) {
-        if (isValidIndex(index)){
+        if (Boolean.TRUE.equals(isValidIndex(index))){
             // make temp node
             Node tempNode = head;
-            for (Integer i = 0;i < index ; i++){
+            for (int i = 0;i < index ; i++){
                 tempNode = tempNode.nextNode;
             }
             // skip one index(middle)

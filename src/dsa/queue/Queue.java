@@ -22,7 +22,7 @@ public class Queue implements QueueOperations<Integer>{
             rear +=1;
         }
         //check queue is full or not
-        if (isFull()){
+        if (Boolean.TRUE.equals(isFull())){
             System.out.println("Queue is full");
         }else {
             queue[font++] = integer;
@@ -32,7 +32,7 @@ public class Queue implements QueueOperations<Integer>{
     @Override
     public void dequeue() {
         //check queue is empty or not
-        if (isEmpty()){
+        if (Boolean.TRUE.equals(isEmpty())){
             System.out.println("Queue is empty");
         }else {
             rear ++;
@@ -41,20 +41,12 @@ public class Queue implements QueueOperations<Integer>{
 
     @Override
     public Boolean isEmpty() {
-        if (font < 0){
-            return true;
-        }else {
-            return false;
-        }
+        return font < 0;
     }
 
     @Override
     public Boolean isFull() {
-        if (font == queue.length -1){
-            return true;
-        }else {
-            return false;
-        }
+        return font == queue.length - 1;
     }
 
     @Override
@@ -66,7 +58,7 @@ public class Queue implements QueueOperations<Integer>{
 
     @Override
     public Integer getFont() {
-        if (!isEmpty()){
+        if (Boolean.FALSE.equals(isEmpty())){
             return queue[font -1];
         }else {
             return null;
@@ -84,8 +76,8 @@ public class Queue implements QueueOperations<Integer>{
 
     @Override
     public void playLoop() {
-        Integer choice = 0;
-        Integer queueSize = 0;
+        int choice = 0;
+        int queueSize = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Queue Size");
         queueSize = scanner.nextInt();;

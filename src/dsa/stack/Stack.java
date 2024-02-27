@@ -28,19 +28,13 @@ public class Stack implements StackOperations<Integer> {
 
     @Override
     public Boolean isEmpty() {
-        if (top == -1)
-            return true;
-        else
-            return false;
+        return top == -1;
 
     }
 
     @Override
     public Boolean isFull() {
-        if (stack.length-1 == top)
-            return true;
-        else
-            return false;
+        return stack.length - 1 == top;
 
     }
 
@@ -54,7 +48,7 @@ public class Stack implements StackOperations<Integer> {
 
     @Override
     public void display() {
-        for (Integer i = 0 ;i<top ;i++){
+        for (int i = 0 ;i<top ;i++){
             System.out.printf("%d\t",stack[i]);
         }
     }

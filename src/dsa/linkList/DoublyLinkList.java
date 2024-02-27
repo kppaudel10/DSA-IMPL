@@ -23,7 +23,7 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
         } else {
             Node tempNode = head;
             if (size()>= index){
-                for (Integer i = 0; i < index; i++) {
+                for (int i = 0; i < index; i++) {
                     tempNode = tempNode.nextNode;
                 }
                 //set data in new node
@@ -69,7 +69,7 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
             Node nodeAfterIndex;
             //find node that is one step before index
             nodeBeforeIndex = head;
-            for (Integer i = 0; i<index ;i++){
+            for (int i = 0; i<index ;i++){
                 nodeBeforeIndex= nodeBeforeIndex.nextNode;
             }
             //find node that is one step after index
@@ -161,7 +161,7 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
 
     @Override
     public Boolean contains(Object o) {
-        Boolean result = false;
+        boolean result = false;
         if (head != null){
             Node temNode = head;
             while (temNode.nextNode != null){
@@ -185,7 +185,7 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
         Integer element = null;
         if (size()>= index){
             Node tempNode = head;
-            for (Integer i = 0 ; i<index ;i++){
+            for (int i = 0; i<index ; i++){
                 // swap node
                 tempNode = tempNode.nextNode;
             }
@@ -207,8 +207,8 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
 
     @Override
     public Integer indexOf(Object o) {
-        Integer index = -1;
-        Boolean isFound = false;
+        int index = -1;
+        boolean isFound = false;
         Node tempNode = head;
         while (tempNode.nextNode != null){
             index++;
@@ -237,7 +237,7 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
         if (size() >= index){
             //find node for remove
             Node tempNode = head;
-            for (Integer i = 0 ; i <= index ; i++){
+            for (int i = 0; i <= index ; i++){
                 tempNode = tempNode.nextNode;
             }
             // skip middle node
@@ -259,9 +259,8 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
     @Override
     public void removeLast() {
         if (tail != null){
-            Node nodeBeforeTail = tail.previousNode;
             // re-assign tail
-            tail = nodeBeforeTail;
+            tail = tail.previousNode;
             tail.nextNode = null;
         }
     }
@@ -295,7 +294,7 @@ public class DoublyLinkList implements LinkListOperations<Integer> {
         }
     }
 
-    private class Node {
+    private static class Node {
         Integer data;
         Node previousNode; // store reference of previous node
         Node nextNode;  // store reference of next node
